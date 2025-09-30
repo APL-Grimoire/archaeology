@@ -1,0 +1,27 @@
+A←lex B;C;D;E;F;G;H;I;S;V;⎕IO;sdf                                      
+⎕IO←0                                                                  
+C←'_¯⎕ABCDEFGHIJKLMNOPQRSTUVWXYZ∆abcdefghijklmnopqrstuvwxyz0123456789.'
+sdf←'+-×÷*⌈⌊|<≤=≥>≠∨∧⍱⍲!⍟○'                                            
+D←⍴B←B,⎕AV[2]                                                          
+B←,B                                                                   
+G←G≠¯1↓0,G←B∊C                                                         
+A←≠\G                                                                  
+H←'¯0123456789'                                                        
+H←(G/B)∊H                                                              
+H←G\H≠¯1↓0,H                                                           
+A←A∨(G←B=' ')∧H∧1↓H,0                                                  
+A←D⍴G⍱A∧¯1↓0,A                                                         
+H←G=≠\G←B=''''                                                         
+E←E∨0,¯1↓E←~∨\H\'⍝'=H/B                                                
+S←⍴B ⋄ B←,B ⋄ A←,A                                                     
+I←(B∊'/⌿\⍀')/⍳⍴B ⋄ I←(I≠0)/I                                           
+A[I]←A[I]∧~B[I-1]∊sdf                                                  
+I←(B∊'∘')/⍳⍴B ⋄ I←(I<¯1+⍴B)/I                                          
+V←~(B[I+1]='.')∧B[I+2]∊sdf                                             
+A[I+1]←A[I+1]∧V ⋄ A[I+2]←A[I+2]∧V                                      
+I←(B∊'.')/⍳⍴B ⋄ I←(I≠1)/I ⋄ I←(I<¯1+⍴B)/I                              
+V←~(B[I-1]∊sdf)∧B[I+1]∊sdf                                             
+A[I]←A[I]∧V ⋄ A[I+1]←A[I+1]∧V                                          
+A←S⍴A ⋄ B←S⍴B                                                          
+A←A∧E∧H                                                                
+A←((-⍴D)↑¯1)↓A              
